@@ -1,6 +1,6 @@
 ## 20 New APIs in .NET 6
 
-### DateOnly & TimeOnly
+### DateOnly and TimeOnly
 
 .NET 6 introduces two long-awaited types - *DateOnly* and *TimeOnly*. 
 They represent the date or time portion of a *DateTime*.
@@ -121,7 +121,7 @@ while (priorityQueue.Count > 0)
 // Third 1
 // Fourth
 ``` 
-### Reading & writing files
+### Reading and Writing Files
 
 .NET 6 introduces a new low-level API for reading and writing files without a FileStream.
 A new type, RandomAccess, provides offset-based APIs for reading and writing files in a thread-safe manner.
@@ -144,7 +144,7 @@ await RandomAccess.ReadAsync(handle, buffer2, 0);
 string content = Encoding.UTF8.GetString(buffer2.ToArray());
 Console.WriteLine(content); // Hello world
 ``` 
-### A new PeriodicTimer
+### A New PeriodicTimer
 
 Meet a fully async 'PeriodicTimer'. 
 It enables waiting asynchronously for timer ticks.
@@ -225,7 +225,7 @@ void StartMeterListener()
 }
 ```
 
-### Reflection API for nullability information
+### Reflection API for Nullability Information
 
 It provides nullability information and context from reflection members:
 - ParameterInfo
@@ -254,7 +254,7 @@ class Example
 }
 ```
 
-### Reflection API for nested nullability information
+### Reflection API for Nested Nullability Information
 
 It allows you to get nested nullability information. 
 You can specify that an array property must be non-null, but the elements can be null or vice versa. 
@@ -283,7 +283,7 @@ class Example
 }
 ```
 
-### Process Path & Id
+### Process Path and ID
 You can access a process path and ID without allocation a new Process instance.
 
 
@@ -295,7 +295,7 @@ Console.WriteLine(processId);
 Console.WriteLine(path);
 ```
 
-###  A new configuration helper
+###  A New Configuration Helper
 
 A new configuration helper 'GetRequiredSection` has been added in .NET 6.
 It throws an exception if a required configuration section is missing.
@@ -336,7 +336,7 @@ It's useful for cryptographic applications for:
 byte[] bytes = RandomNumberGenerator.GetBytes(300);
 ```
 
-### Native memory API
+### Native Memory API
 
 .NET 6 introduces a new API to allocate native memory. 
 A new NativeMemory type has methods for allocation and freeing memory.
