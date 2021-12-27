@@ -97,7 +97,7 @@ Console.WriteLine($"RGB: {r}, {g}, {b}");
 // Output: RGB: 255, 100, 30
 ```
 
-###  *Sealed* When Overriding *ToString* for Record Type
+###  Sealed When Overriding ToString for Record Type
 
 You couldn't add a *sealed* modifier when you override *ToString* method in the record type in C# 9.
 
