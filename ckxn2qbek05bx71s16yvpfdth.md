@@ -4,7 +4,7 @@
 
 C# 10 allows initializing *const* strings using string interpolation, but the placeholder must also be a *const* string.
 
-The placeholder can't be a numeric constant cause it's converted to string at runtime.
+The placeholder can't be another type, like numeric or date values, because they are sensitive to *Culture*, and can't be converted at compile time.
 
 
 ```cs
