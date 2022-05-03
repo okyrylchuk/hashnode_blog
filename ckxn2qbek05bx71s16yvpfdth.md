@@ -175,12 +175,9 @@ struct Person
 C# 9 has allowed attributes on local functions. C# 10 allows attributes on *lambda* expressions and *lambda* parameters. To distinguish expression attribute from parameter attribute, you must use a parenthesized parameter list for *lambda* expression.
 
 ```cs
-Action a =[MyAttribute] () => { };               // [MyAttribute] lambda
+Action a =[MyAttribute] () => { };                          // [MyAttribute] lambda
 Action<int> b =[return: MyAttribute] (x) => { };  // [MyAttribute] lambda
-Action<int> c = ([MyAttribute] x) => { };         // [MyAttribute] x
-var _ = string () => { return string.Empty; };
-
-int one = (x => x)(1);
+Action<int> c = ([MyAttribute] x) => { };             // [MyAttribute] x
 
 class MyAttribute : Attribute
 { }
