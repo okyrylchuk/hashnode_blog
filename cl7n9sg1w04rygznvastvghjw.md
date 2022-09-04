@@ -228,15 +228,12 @@ Console.WriteLine($"After    >>>: bin = {Convert.ToString(b, 2),32}, dec = {b}")
 // After    >>>: bin =   111111111111111111111111111000, dec = 1073741816
 ```
 
-### Static Abstract Members in Interfaces for Generic Math Support
+### Static Abstract Members in Interfaces
 
 C# 11 introduces static abstract members in interfaces.
 
 You can add static abstract members in interfaces to define interfaces that include overloadable operators, other static members, and static properties.
 
-It's one of the features to enable [generic math](https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/) support.
-
-Static abstract member.
 ```cs
 public interface IAdditionOperator<TSelf, TOther, TResult>
     where TSelf : IAdditionOperator<TSelf, TOther, TResult>
@@ -245,7 +242,10 @@ public interface IAdditionOperator<TSelf, TOther, TResult>
 }
 ```
 
-Generic math.
+### Generic Math
+
+Static abstract members feature has been added to enable generic math support. More about it you can read in this [blog post](https://devblogs.microsoft.com/dotnet/preview-features-in-net-6-generic-math/).
+
 ```cs
 Point p1 = new() { X = 10, Y = 5 };
 Point p2 = new() { X = 5, Y = 7 };
