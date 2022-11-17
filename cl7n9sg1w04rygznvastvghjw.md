@@ -1,4 +1,4 @@
-## Twelve C# 11 Features
+# Twelve C# 11 Features
 
 ### Required Members
 
@@ -65,14 +65,15 @@ Console.WriteLine(jsonString);
 
 ### UTF-8 String Literals
 
-C# 11 introduces UTF-8 string literals. It allows converting only UTF-8 characters to their byte representation. Conversion is done at compile time.
+C# 11 introduces UTF-8 string literals. You can add the `u8` suffix to a string literal to specify UTF-8 encoding. UTF-8 literals are stored as `ReadOnlySpan<byte>`. To get an array of bytes you need to use `ReadOnlySpan<T>.ToArray()` method.
 
 ```cs
 // C# 10
 byte[] array = Encoding.UTF8.GetBytes("Hello World");
 
 // C# 11
-byte[] array = "Hello World";
+ReadOnlySpan<byte> span = "Hello World"u8;
+byte[] array = span.ToArray();
 ```
 
 ### List Patterns
@@ -273,6 +274,24 @@ public record Point :
     }
 
     public override string ToString() => $"X: {X}; Y: {Y}";
+}
+```
+
+### File scoped types
+
+*I know my post's title is "Twelve C# 11 Features". However, I want to present you the thirteenth feature. I've added it to my post after .NET 7 release.*
+
+C# 11 introduces a new access modifier `file`.
+
+The visibility of created type is scoped to the source file in which it is declared.
+
+This feature helps source generator authors avoid naming collisions.
+
+```cs
+file class Person
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
 }
 ```
 
